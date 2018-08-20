@@ -59,6 +59,7 @@ html, body {
   color: #333;
   font-family: Arial, sans-serif;
   background-color: #c8d6e5;
+  line-height: 1.6;
 }
 
 a, a:hover {
@@ -78,11 +79,16 @@ nav {
 /* Theme */
 
 /* Style Specifics */
-#menuButton {
-  display: none;
+#menuButtonToggler, #menuButton {
+	display: none;
 }
 
 @media (max-width: 576px) {
+	/* Toggle menu visibility when checkbox is checked */
+	input[type="checkbox"]:checked ~ nav {
+		display: block;
+	}
+	
   #menuButton {
     color: #fff;
     background-color: #54a0ff;
@@ -91,6 +97,16 @@ nav {
   }
 
   nav {
+    width: 100%;
     display: none;
   }
+
+	a {
+		display: block;
+	}
+}
+
+.instructions {
+  text-align: center !important;
+  margin: 10%;
 }
